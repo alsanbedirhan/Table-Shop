@@ -1,0 +1,205 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Impression";
+    Layout = "~/Views/Navbar/View.cshtml";
+    string mail = Context.Session.GetString("mail");
+}
+
+<!DOCTYPE html>
+<html>
+<body class="body-wrapper">
+    <section class="section bg-gray">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-details">
+                        <h1 class="product-title">Impression Sunrise</h1>
+                        <div class="product-meta">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-user-o"></i> By <a href="/Index/Claude">Claude Monet</a></li>
+                            </ul>
+                        </div>
+                        <br />
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/premium/images/works/Impression Sunrise .jpg" class="d-block w-100" alt="product-img" style="max-height:750px">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/premium/images/works/Impression2.jpg" class="d-block w-100" alt="product-img" style="max-height:750px">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <br />
+                        <div class="widget price text-center">
+                            <h4>Price</h4>
+                            <p>₺200</p>
+                            <form action="/Sepet/Se" class="align-content-end">
+                                <input name="UserMail" type="hidden" value="@mail" />
+                                <input name="Sanatci" type="hidden" value="Claude Monet" />
+                                <input name="UrunAd" type="hidden" value="Impression Sunrise" />
+                                <input name="Adet" type="number" min="1" max="100" value="1" />
+                                <input name="Price" type="hidden" value="200" />
+                                <button class="btn btn-dark" type="submit">Sepete Ekle</button>
+                            </form>
+                        </div>
+                        <div class="content mt-5 pt-5">
+                            <ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+                                       aria-selected="true">Ürün Detayı</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                       aria-selected="false">Sanatçının Hayatı</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <h3 class="tab-title">Ürün Açıklaması</h3>
+                                    <p>
+                                        Oscar Claude Monet‘in 1873’te tamamladığı “Impression, Sunrise”, Fransa’daki La Havre Limanı’nda gündoğumunu göstermekte. Mavi ve sarının tonlarının kullanıldığı eser, ilk 1874 yılında sergilendi ve ‘olumsuz’ diyebileceğimiz eleştiriler aldı. Eleştirilerin sebebi, gün doğumunda La Havre‘nin böyle görünmemesiydi ve insanlar Monet’in aslını yapamayacak kadar yetenekten yoksun olduğunu düşündü. Lakin herkes yanlıştı; Monet, “Impression, Sunrise”ye gördüğü manzaradan aklında kalanı, ona hissettirdiklerini, belki de görmek istediklerini aktarmıştı ve daha sonra bu bir tarz olup adına ‘İzlenimcilik‘ denilecekti.
+                                    </p>
+                                    <p>
+                                        Eser hakkında en çok yapılan yorum, ilk bakışta en dikkat çekici olan renk, yani ‘turuncu güneş’tir. Güneş, resimde en parlak görünen şey olarak algılansa da bu bir yanılgıdır. Beynimizde sürekli çalışan korteksler, bu resimdeki güneşin bize en parlak şey olduğunu algılamamızı sağlıyor. Ancak bu ışığın yanılsamasından başka bir şey değil. Güneş, en az bulutlar kadar parlak; sarı ve turuncu renklerin kullanımından dolayı en parlağıymış gibi algılıyoruz. Bunu, resmi siyah – beyaz yaparak görebilirsiniz. Bu ince nokta karşısında Monet’in yüce dehasına duyulan saygı kat be kat artmıştır.
+                                    </p>
+                                    <p>
+                                        Orijinal ismi “Impression, Soleil Levant” olan yumuşak fırça darbeleriyle yapılan bu dinlendirici eserde La Havre Limanı‘nda sisli bir gün doğumunu gösteriyor. Biri ayakta kürek çeken iki kişinin içinde bulunduğu kayığın göründüğü denizin ilersinde bir kayık daha vr, ancak sisten net görünmüyor. Daha doğrusu Monet, o kayığı net görememiş ve bize böyle aktarmış. Gözlerinizi kıstığınızda daha iyi görebileceğiniz 48 x 63 cm ebatlarındaki bu tablo, Monet’in pek çok eserinin bulunduğu Paris, Marmottan Müzesi’nde sergileniyor.
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <h3 class="tab-title">Sanatçının Hayatı</h3>
+                                    <p>
+                                        Adolphe ve Louise-Justine Monet’nin çocuğu olarak Paris’te dünyaya gelen sanatçı. Monet, Notre-Dame-de-Lorette kilisesinde Oscar-Claude olarak vaftiz edildi. Babası onun aile mesleği olan bakkallığa devam etmesini istiyordu, şarkıcı olan annesi ise Claude’ın sanatçı olmasını istiyordu.
+                                    </p>
+                                    <p>
+                                        1851 nisanında, Monet Le Havre’da ortaokula başladı. Önceleri 10–12 Fransız frangı’na sattığı karakalem karikatürleriyle çevresinde tanınmaya başladı. İlk çizgi derslerini, Jacques-Louis David’in öğrencisi olan Jacques-Francois Ochard‘dan aldı. Bu dönemde, Eugène Boudin‘le tanıştı. Boudin Monet’e yağlı boya kullanmayı ve açık ortamlarda resim tekniğini öğretti.
+                                    </p>
+                                    <p>
+                                        Louvre’u ziyaret etmek için Paris’e geldiğinde, pek çok ressamın eski ustaları taklit ettiğine tanık oldu. Monet, bir pencerenin yanına oturup gördüklerini resmetmektense, gereçlerini yanına alıp dışarıda resim yapmayı tercih ediyordu. Paris’te geçirdiği yıllarda pek çok empresyonist ressamla arkadaş olmuştu. Bunlardan biri Edouard Manet’ti.
+                                    </p>
+                                    <p>
+                                        Haziran 1861’de Monet, yedi yıllık bir sözleşmeyle orduya katıldı, ancak görevinin ikinci yılında teyzesi Madame Lecadre sözleşmesinin feshedilmesini sağladı. Madame Lecadre’in bir koşulu vardı: Monet’nin üniversitede sanat eğitimi almasıydı.
+                                    </p>
+                                    <p>
+                                        1862’de Paris’te Charles Gleyre‘in öğrencisiyken, üniversitedeki geleneksel resim anlayışı Monet’de hayal kırıklığı yaratmıştı. Bu dönemde Pierre-Auguste Renoir, Frederic Bazille ve Alfred Sisley ile tanıştı. Birlikte resme yeni yaklaşımlarını paylaştılar, ışığın açık havada yarattığı etkiyi resme parçalanmış renkler ve seri fırça darbeleriyle aktardılar. Daha sonraları empresyonizm olarak adlandırılmıştı.
+                                    </p>
+                                    <p>
+                                        Monet’nin tanınmasını sağlayan 1866 tarihli Camille ya da Yeşil Elbiseli Kadın (La Femme à la Robe Verte) adlı eseri, gelecekteki eşi Camille Doncieux‘nun Monet tarafından yapılmış pek çok resminden biriydi. Kısa süre sonra Doncieux hamile kaldı ve ilk çocukları Jean dünyaya geldi. 1868’de Monet, Seine nehrine atlayarak intihar etmeyi denemişti.
+                                    </p>
+                                    <p>
+                                        Fransa Prusya Savaşı süresince (1870–1871) İngiltere’ye sığınan Monet, John Constable ve Joseph Mallord William Turner‘ın resimleri üzerinde çalıştı. Her ikisi de renk kullanımında Monet’in yenilikçi buluşlarına ilham kaynağı oldular.
+                                    </p>
+                                    <p>
+                                        1870’de Monet ve Doncieux evlendiler. 1871–1878 yılları arasında Monet, Fransa’ya geri döndü. Önce çocukluğunun geçtiği La Havre kentine gitti. Le Havre’dan bir manzarayı yansıtan İzlenim: Gün doğumu (Impression, soleil levant) tablosunu yaptı. 1874’te ilk empresyonist sergide yer alan bu resim günümüzde Paris’te Musée Marmottan-Monet’dedir. Sanat eleştirmeni Louis Leroy, resmin adından yola çıkarak “izlenimcilik” (empresyonizm) terimini, aşağılamak amacıyla ortaya atmıştır.
+                                    </p>
+                                    <p>
+                                        1874 yılında Manet, Degas, Renoir, Cezanne, Pissaro, Sisley ile beraber açtıkları sergi başarısız oldu. Ancak Edouard Manet yardımıyla Argueille’de kalmayı sürdürebiliyordu. Bu dönemde resimleri hayatının başka hiçbir döneminde olmadığı kadar koyulaştı, kasvetli bir hal almıştı.
+                                    </p>
+                                    <p>
+                                        Camille’in ölümünden sonra(1879) yas içindeki Monet, bir daha asla yoksulluk batağına düşmeme kararını vermişti ve en güzel eserlerini yaratmak için çaba harcamaya başladı. 1883-1908 yılları arasında, Akdeniz’i gezip pek çok doğa resmi yapmıştı.  Önemli bir resim serisini İtalya Venedik’te yapmıştır. Ayrıca Londra’da iki önemli serisi olan Parlamento ve Charing Cross Köprüsü (Charing Cross Bridge) resimlerini hazırlamıştı.
+                                    </p>
+                                    <p>
+                                        Yeni eşi ve çocuklarıya beraber mayıs 1883’te Paris’ten 80 km. mesafedeki Giverny’e yerleştiler. Monet, burada bir ev ve bahçe kiraladı. Geri kalan ömrünün büyük kısmını sonradan satın aldığı bu yerde yeşerttiği bahçeyi resmederek geçirdi. İlk önce Ot yığınları serisini yaptı. Farklı yönlerden ve günün farklı saatlerinde ot yığınlarını resmetti. Son olarak da bahçesinin resmettiği Zambaklar serisini hazırladı.
+                                    </p>
+                                    <p>
+                                        Monet, 1923’te katarakt sebebiyle iki kez ameliyat olmuştur. Katarakt olduğu süreçte yaptığı resimlerin genel olarak kırmızı tonlarda olduğunu genelde görürüz, bu katarakt hastalarının görüş biçiminin karakteristiğidir. Monet, 5 Aralık 1926’da, 86 yaşındayken akciğer kanseri nedeniyle ölmüş ve Giverny kilisesi mezarlığına gömüldü.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer section section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-8 offset-md-1 offset-lg-0">
+                    <div class="block about">
+                        <h2 style="font-size:60px;color:whitesmoke">İKARUS</h2>
+                        <p class="alt-color">
+                            Sanatseverleri nadide parçalar ile buluşturuyoruz
+                        </p>
+                        <p>
+                            Kurucular:
+                        </p>
+                        <p>Bedirhan Alşan & Mehmet Batuhan Çakmakçıoğlu</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 offset-lg-1 col-md-3">
+                    <div class="block">
+                        <h3 style="color:whitesmoke">Sanatçılar</h3>
+                        <ul>
+                            <li><a href="/Index/Vincent">Vincent van Gogh</a></li>
+                            <li><a href="/Index/Claude">Claude Monet</a></li>
+                            <li><a href="/Index/Leonardo">Leonardo da Vinci</a></li>
+                            <li><a href="/Index/Pablo">Pablo Picasso</a></li>
+                            <li><a href="/Index/Michelangelo">Michelangelo</a></li>
+                            <li><a href="/Index/Salvador">Salvador Dali</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="social-media-icons text-center">
+                        <li><a class="fa fa-facebook" href="#" target="_blank"></a></li>
+                        <li><a class="fa fa-twitter" href="#" target="_blank"></a></li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <div class="copyright" style="text-align:center">
+                        <p>
+                            Copyright ©
+                            <script>
+                                var CurrentYear = new Date().getFullYear()
+                                document.write(CurrentYear)
+                            </script>. Bütün Hakları Saklıdır
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-to">
+            <a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="~/premium/plugins/jQuery/jquery.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/bootstrap-slider.js"></script>
+    <script src="~/premium/plugins/tether/js/tether.min.js"></script>
+    <script src="~/premium/plugins/raty/jquery.raty-fa.js"></script>
+    <script src="~/premium/plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="~/premium/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="~/premium/plugins/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="~/premium/plugins/smoothscroll/SmoothScroll.min.js"></script>
+    <script src="~/premium/js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,190 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Creation";
+    Layout = "~/Views/Navbar/View.cshtml";
+    string mail = Context.Session.GetString("mail");
+
+}
+
+<!DOCTYPE html>
+<html>
+<body class="body-wrapper">
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-details">
+                        <h1 class="product-title">Creation of Adam</h1>
+                        <div class="product-meta">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-user-o"></i> By <a href="/Index/Michelangelo">Michelangelo</a></li>
+                            </ul>
+                        </div>
+                        <br />
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/premium/images/works/Creation of Adam .jpg" class="d-block w-100" alt="product-img" style="max-height:750px">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/premium/images/works/Creation2.jpg" class="d-block w-100" alt="product-img" style="max-height:750px">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <br />
+                        <div class="widget price text-center">
+                            <h4>Price</h4>
+                            <p>₺200</p>
+                            <form action="/Sepet/Se" class="align-content-end">
+                                <input name="UserMail" type="hidden" value="@mail" />
+                                <input name="Sanatci" type="hidden" value="Michelangelo" />
+                                <input name="UrunAd" type="hidden" value="Creation of Adam" />
+                                <input name="Adet" type="number" min="1" max="100" value="1" />
+                                <input name="Price" type="hidden" value="200" />
+                                <button class="btn btn-dark" type="submit">Sepete Ekle</button>
+                            </form>
+                        </div>
+                        <div class="content mt-5 pt-5">
+                            <ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+                                       aria-selected="true">Ürün Detayı</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                       aria-selected="false">Sanatçının Hayatı</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <h3 class="tab-title">Ürün Açıklaması</h3>
+                                    <p>
+                                        Papa II. Julius’un bilhassa çağırdığı Michelangelo, St. Pietro Bazilikası duvar ve tavanlarını sanatıyla donattı. Bu iş 4 senede tamamlayan Michelangelo, İncil’de geçenleri kronolojik olarak resmetti. Bu eserlerinden ön mühimi, “Adem’in Yaratılışı“dır. 1512’de tamamlanan bu fresk, o meşhur hikayeyi Rönesans’ın usta ismi Michelangelo’nun dehasından gösteriyor.
+                                    </p>
+                                    <p>
+                                        İncil’e göre Tanrı, Adem’i kendi suretinden yarattı. Onun kaslı, kuvvetli bedenine can üfleyen Tanrı, daha sonra yanına Havva’yı gönderdi. Ancak Havva’dan bahsetmeyeceğim. Tanrı’nın bir parçası olan Adem, rahme düşmeyen ilk çekirdek; yani bir kadın tarafından dünyaya getirilmeyen ilk ve tek insandır. Michelangelo‘nun tasviri de bunu bize Adem’i çamurdan bir tepeye yerleştirerek gösteriyor.
+                                    </p>
+                                    <p>
+                                        Solda, bir çamur yükseltisinde sağ kolundan destek alarak duran Adem, sol elini Tanrı’nın ona doğru uzanan eline uzatıyor. Bu bir el ele veriş, tokalaşma değil, bunun için uğraşılmıyor. Burada, en kaba tabirle bir boşluk görüyoruz. Her milimi ölçülüp üzerine sayısız teori üretilen bu boşluk, 16. Yüzyıl’dan itibaren aklınıza getireceğiniz her türlü sanatın ‘zaman’a, ‘zamanlama’ya ve ‘zamansızlık’ı olmuştur. (En azından İtalya’da).
+                                    </p>
+                                    <p>
+                                        Sağ tarafta sakallı ve kaslı bir Tanrı görüyorsunuz. Bu, insanlara verilen ilk Tanrı görüntüsüdür. Yukarıdaki sözlerime ek olarak Michelangelo, 16. Yüzyıl’da sanattan başka inanç sisteminde de bir değişim yarattı. Yaptığı Tanrı figürü, büyük bir cesaret işiydi. Mekan Vatikan olduğu için Michelangelo’ya övgümün yalnız sanatı değil, cesur sanatından ileri geldiğini eklemek isterim. Tanrı’nın taşıyıcıları ise baş melekleri. Adem’in muhtaç bakışlarına karşın çok yorgun görünen Tanrı’nın şefkatli gözleri. Pek çok sanat tarihçisi, bu yüzün Michelangelo’nun kendisi olduğunu söylüyor. Bunun ucu açıktır. Ek olarak, Tanrı’nın duruşunu resmederken ustamız, Augustus‘un (nam*ı diğer ‘Jül Sezar’) zamanında paraya bastırdığı Oğlak üstündeki pozundan etkilenmiş.
+                                    </p>
+                                    <p>
+                                        Sağdaki Tanrı figürünün sol koluyla kavradığı dişiye bakınız. Bu kadının zarif yüzünde bir telaş görünüyor. Araştırmacılar, bu dişinin Adem’e eş olacak Havva olduğuna inanıyorlar. Henüz sağda, Tanrı’nın cennetinde yer alan Havva, sol tarafa, yani yeryüzündeki cennete telaşla bakıyor.
+                                    </p>
+                                    <p>
+                                        İncil’deki kronolojik sıralamaya göre 4. hikaye olan “Adem’in Yaratılışı“, insanoğlunun başlangıç noktası; Milat olarak kabul edilir. İncil’e göre Tanrı, Adem’i kendi suretinden yarattı. Ustamız bu freskinde bunun tam aksini yapmış. Yani, Michelangelo, Tanrı’yı Adem’in suretinden yarattı. Bunun yanı sıra yıllarca insan anatomisi üzerinde çalışan Michelangelo‘nun dehasına hayranlık duyacağınız bir başka nokta da yine Tanrı’nın tarafında yer alıyor. Tanrı’yla meleklerinin alanına uzaktan bir bakın, insan beyninin biçimini ayrıntılarıyla görüyor musunuz?
+                                    </p>
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <h3 class="tab-title">Sanatçının Hayatı</h3>
+                                    <p>
+                                        Michelangelo, 6 Mart 1475 tarihinde Caprese'de dünyaya geldi. Çok küçük yaşlarında ailesiyle bilrikte Floransa'ya geldi.
+                                        6 yaşındayken annesini kaybetti.
+                                        13 yaşındayken dönemin ünlü sanatçılarından Domenico Ghirlandaio'nun yanında eğitim almaya başladı.
+                                        Henüz 26 yaşındayken, sanattaki yeteneğini ispat ettiği "Kral Davud" heykelini yaptı. (!Müstehcen!)
+                                        1505 senesinde Papa II. Julius tarafından kendisine, en önemli başarılarından biri olarak görülen Vatikan’ın yanındaki Sistine Şapeli’nin tavan resimlerinin yapılması işi verildi. 3 sene sonra başlayacağı bu görevi sanatçı, 520 metrekarelik bir alanda yaklaşık dört yıllık bir çalışmanın ürünü olarak bitirdi.
+                                        Rönesans sanatına benzersiz bir etkide bulunan Michelangelo, klasik sanat tekniklerini uygulamasının yanı sıra, esas olarak, aynı Leonardo da Vinci gibi insan formunu her açıdan tasvir edebilmek maksadıyla kadavralar üzerinde çalışıp, Yunan ve Roma sanatından esinlendiği idealleştirilmiş insan tasarımlarını ulaştığı gerçekçilik boyutuyla yakalamaya çalıştı.
+                                        Batı resminin babası olarak kabul edilen Giotto’nun resmindeki doğal ve gerçekçi yaklaşım ile 15. yüzyıl başında tam olarak anlaşılabilen derinlikte perspektif olgusunu geliştirip kendi tarzına temel yapan Michelangelo, onlarca heykel, freske imza atıp Roma’nın yeniden inşa ve düzenlenmesinde de önemli görevler almıştır. Günümüzde birçok sanatçı, Michelangelo'u numune-i imtisal olarak görmektedir.
+                                        Uzun yıllar sanat kariyerine devam eden Michelangelo, hayatının son dönemini Roma’daki Aziz Peter Kilisesi’nin mimarı olarak geçirmiş ve 18 Şubat 1564 tarihinde 89 yaşında hayatını kaybetmiştir.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer section section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-8 offset-md-1 offset-lg-0">
+                    <div class="block about">
+                        <h2 style="font-size:60px;color:whitesmoke">İKARUS</h2>
+                        <p class="alt-color">
+                            Sanatseverleri nadide parçalar ile buluşturuyoruz
+                        </p>
+                        <p>
+                            Kurucular:
+                        </p>
+                        <p>Bedirhan Alşan & Mehmet Batuhan Çakmakçıoğlu</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 offset-lg-1 col-md-3">
+                    <div class="block">
+                        <h3 style="color:whitesmoke">Sanatçılar</h3>
+                        <ul>
+                            <li><a href="/Index/Vincent">Vincent van Gogh</a></li>
+                            <li><a href="/Index/Claude">Claude Monet</a></li>
+                            <li><a href="/Index/Leonardo">Leonardo da Vinci</a></li>
+                            <li><a href="/Index/Pablo">Pablo Picasso</a></li>
+                            <li><a href="/Index/Michelangelo">Michelangelo</a></li>
+                            <li><a href="/Index/Salvador">Salvador Dali</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="social-media-icons text-center">
+                        <li><a class="fa fa-facebook" href="#" target="_blank"></a></li>
+                        <li><a class="fa fa-twitter" href="#" target="_blank"></a></li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <div class="copyright" style="text-align:center">
+                        <p>
+                            Copyright ©
+                            <script>
+                                var CurrentYear = new Date().getFullYear()
+                                document.write(CurrentYear)
+                            </script>. Bütün Hakları Saklıdır
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-to">
+            <a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="~/premium/plugins/jQuery/jquery.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/bootstrap-slider.js"></script>
+    <script src="~/premium/plugins/tether/js/tether.min.js"></script>
+    <script src="~/premium/plugins/raty/jquery.raty-fa.js"></script>
+    <script src="~/premium/plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="~/premium/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="~/premium/plugins/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="~/premium/plugins/smoothscroll/SmoothScroll.min.js"></script>
+    <script src="~/premium/js/script.js"></script>
+</body>
+</html>
+

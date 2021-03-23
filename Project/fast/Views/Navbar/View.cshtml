@@ -1,0 +1,97 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    Layout = null;
+    string fullname = Context.Session.GetString("fullname");
+}
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>İKARUS</title>
+    
+    <link href="~/premium/images/favicon2.png" rel="shortcut icon">  
+     <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="~/premium/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/premium/plugins/bootstrap/css/bootstrap-slider.css">   
+    <link href="~/premium/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">   
+    <link href="~/premium/plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="~/premium/plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">   
+    <link href="~/premium/plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+    <link href="~/premium/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">    
+    <link href="~/premium/css/style.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="body-wrapper">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light navigation">
+                        <a class="navbar-brand" href="/Index/Index2">
+                            İKARUS
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto main-nav ">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Index/Index2">Ana Sayfa</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Item/Urunler">Ürünler</a>
+                                </li>
+                                <li class="nav-item dropdown dropdown-slide">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">
+                                        Sanatçılar<span><i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                   
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="/Index/Salvador">Salvador Dalí</a>
+                                        <a class="dropdown-item" href="/Index/Vincent">Vincent van Gogh</a>
+                                        <a class="dropdown-item" href="/Index/Claude">Claude Monet</a>
+                                        <a class="dropdown-item" href="/Index/Michelangelo">Michelangelo</a>
+                                        <a class="dropdown-item" href="/Index/Leonardo">Leonardo da Vinci</a>
+                                        <a class="dropdown-item" href="/Index/Pablo">Pablo Picasso</a>
+                                    </div>
+                                </li>                                
+                            </ul>
+                            <ul class="navbar-nav ml-auto mt-10">
+                                @if (fullname == null)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link login-button" href="/Login/Index">Login</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link login-button" href="#">@fullname</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white add-button" href="/Sepet/Order">Sepet</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link login-button" href="/Login/Logout">Çıkış Yap</a>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @RenderBody()
+
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+﻿@using Microsoft.AspNetCore.Http
+@using fast.Models
+@model List<Sepet>
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Navbar/View.cshtml";
+    string fullname = Context.Session.GetString("fullname");
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+    <section>
+        @{
+            int toplam = 0;
+            int c = 0;
+            @foreach (var z in Model)
+            {
+                c = c + 1;
+            }
+            <div class="modal fade bd-example-modal-lg" id="seventh" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ödeme Ekranı</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <form action="/Sepet/AllSil">
+                                    <label>Kart Bilgileriniz</label>
+                                    <input type="text" style=" margin: 5px;" maxlength="16"><br><br>
+                                    <label>Kartın Üzerindeki İsim</label>
+                                    <input type="text" style=" margin: 5px;"><br><br>
+                                    <label>CVV</label>
+                                    <input type="text" style=" margin: 5px;" maxlength="3"><br><br>
+                                    <label>Son Kullanma Tarihi</label>
+                                    <select>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                    <select>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                    <br />
+                                    <br />
+                                    <input type="submit" value="Öde">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="widget dashboard-container my-adslist">
+                        <h1 class="widget-header">Sepetiniz</h1>
+                        <p>Sepetinizde @c tane ürün vardır</p>
+                        <div class="table-responsive">
+                            <table class="table product-dashboard-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ürün Fotoğrafı</th>
+                                        <th>Ürün Açıklaması</th>
+                                        <th class="text-center">Toplam Fiyat</th>
+                                        <th class="text-center">#</th>
+                                    </tr>
+                                </thead>
+
+                                @foreach (var x in Model)
+                                {
+                                    <tbody>
+                                        <tr>
+                                            <td class="product-thumb">
+                                                <img style="width:80px;height:auto" src="~/premium/images/works/@x.UrunAd .jpg" alt="image description">
+                                            </td>
+                                            <td class="product-details">
+                                                <h3 class="title">@x.UrunAd</h3>
+                                                <h3 class="title">Adet Fiyatı: @x.Price ₺</h3>
+                                                <h3 class="title">Adet: @x.Adet</h3>
+                                                <h3 class="title">Sanatçı: @x.Sanatci</h3>
+
+                                            </td>
+                                            <td class="product-category">
+                                                <span class="categories">
+                                                    @{
+                                                        int a = x.Adet * x.Price;
+                                                        toplam = toplam + a;
+                                                    }
+                                                    @a ₺
+                                                </span>
+                                            </td>
+                                            <td class="action" data-title="Action">
+                                                <div class="">
+                                                    <ul class="list-inline justify-content-center">
+                                                        <li class="list-inline-item">
+                                                            <a data-toggle="tooltip" data-placement="top" title="View" class="view" href="/Item/@x.UrunAd.Split(' ').First()">
+                                                                <i class="fa fa-eye"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a data-toggle="tooltip" data-placement="top" title="Delete" class="delete" href="/Sepet/Sil/@x.SepetID">
+                                                                <i class="fa fa-trash"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                }
+
+
+                                <tfoot>
+                                    <tr>
+
+                                        <td colspan="4">
+                                            <h3 style="text-align:center">
+                                                Sepet Toplamı @toplam ₺
+                                            </h3>
+
+                                            @if (toplam > 0)
+                                            {
+                                                <br />
+                                                <div style="text-align:center">
+                                                    <button type="button" class="btn btn-success" style="color:white" data-toggle="modal" data-target="#seventh">Hemen Öde</button>
+                                                    <a href="/Sepet/AllSil" class="btn btn-danger">Sepeti Boşalt</a>
+                                                </div>
+                                            }
+
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer class="footer section section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-8 offset-md-1 offset-lg-0">
+                    <div class="block about">
+                        <h2 style="font-size:60px;color:whitesmoke">İKARUS</h2>
+                        <p class="alt-color">
+                            Sanatseverleri nadide parçalar ile buluşturuyoruz
+                        </p>
+                        <p>
+                            Kurucular:
+                        </p>
+                        <p>Bedirhan Alşan & Mehmet Batuhan Çakmakçıoğlu</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 offset-lg-1 col-md-3">
+                    <div class="block">
+                        <h3 style="color:whitesmoke">Sanatçılar</h3>
+                        <ul>
+                            <li><a href="/Index/Vincent">Vincent van Gogh</a></li>
+                            <li><a href="/Index/Claude">Claude Monet</a></li>
+                            <li><a href="/Index/Leonardo">Leonardo da Vinci</a></li>
+                            <li><a href="/Index/Pablo">Pablo Picasso</a></li>
+                            <li><a href="/Index/Michelangelo">Michelangelo</a></li>
+                            <li><a href="/Index/Salvador">Salvador Dali</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="social-media-icons text-center">
+                        <li><a class="fa fa-facebook" href="#" target="_blank"></a></li>
+                        <li><a class="fa fa-twitter" href="#" target="_blank"></a></li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <div class="copyright" style="text-align:center">
+                        <p>
+                            Copyright ©
+                            <script>
+                                var CurrentYear = new Date().getFullYear()
+                                document.write(CurrentYear)
+                            </script>. Bütün Hakları Saklıdır
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-to">
+            <a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="~/premium/plugins/jQuery/jquery.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/premium/plugins/bootstrap/js/bootstrap-slider.js"></script>
+    <script src="~/premium/plugins/tether/js/tether.min.js"></script>
+    <script src="~/premium/plugins/raty/jquery.raty-fa.js"></script>
+    <script src="~/premium/plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="~/premium/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="~/premium/plugins/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="~/premium/plugins/smoothscroll/SmoothScroll.min.js"></script>
+    <script src="~/premium/js/script.js"></script>
+
+
+</body>
+
+</html>
+
