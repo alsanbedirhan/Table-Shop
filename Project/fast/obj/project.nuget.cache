@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a/6/QrYY7k19hJEF+thLr5+XgSsvxZg5YDYui7uZy1vw/cIhn/3lUFZ9s1ixQePBE9odUBoAXnUpOLHXsKuKVw==",
+  "dgSpecHash": "SBZ49pU7k85M3wvb/VITABBHWHmuyUX1iC8yeTTatvFUDaVqExr6IG1vPy9CPQQG2dKQFXlYujW33pG3Lujp2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bedir\\Desktop\\MonaLisa_NO\\Visual Studio Dosyası\\fast\\fast.csproj",
+  "projectFilePath": "C:\\Users\\bedir\\Source\\Repos\\alsanbedirhan\\Table-Shop\\Project\\fast\\fast.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bedir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bedir\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.2.0\\microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512",
