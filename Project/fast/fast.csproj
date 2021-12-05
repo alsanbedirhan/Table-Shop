@@ -12,6 +12,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Index\Claude.cshtml" />
+    <None Include="Views\Index\Index2.cshtml" />
+    <None Include="Views\Index\Leonardo.cshtml" />
+    <None Include="Views\Index\Michelangelo.cshtml" />
+    <None Include="Views\Index\Pablo.cshtml" />
+    <None Include="Views\Index\Salvador.cshtml" />
+    <None Include="Views\Index\Vincent.cshtml" />
+    <None Include="Views\Item\Camille.cshtml" />
+    <None Include="Views\Item\Creation.cshtml" />
+    <None Include="Views\Item\Doni.cshtml" />
+    <None Include="Views\Item\Galatea.cshtml" />
+    <None Include="Views\Item\Girl.cshtml" />
+    <None Include="Views\Item\Guernica.cshtml" />
+    <None Include="Views\Item\Impression.cshtml" />
+    <None Include="Views\Item\Last.cshtml" />
+    <None Include="Views\Item\Metamorphosis.cshtml" />
+    <None Include="Views\Item\Mona.cshtml" />
+    <None Include="Views\Item\Portrait.cshtml" />
+    <None Include="Views\Item\Salvator.cshtml" />
+    <None Include="Views\Item\Starry.cshtml" />
+    <None Include="Views\Item\Swans.cshtml" />
+    <None Include="Views\Item\The.cshtml" />
+    <None Include="Views\Item\Urunler.cshtml" />
+    <None Include="Views\Item\Van.cshtml" />
+    <None Include="Views\Item\Wheatfield.cshtml" />
+    <None Include="Views\Item\Women.cshtml" />
+    <None Include="Views\Sepet\Order.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
